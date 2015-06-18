@@ -3,7 +3,9 @@ Getting and Cleaning Data Project
 (Codebook)
 
 ###The Variables in the Processed Dataset "tidy.txt"
-There are 180 columns of the "tidy.txt" dataset, pertaining to the 30(6)=180 combinations possible with 30 subjects and 6 activities.  The 66 rows (not counting the header) of the "tidy.txt" dataset correspond to 66 motion-related mean and standard deviation measurements for which average values have been provided.  Thorough descriptions of the variables were not provided with the raw data, however, my attempt to describe them is as follows:
+There are 180 rows (not counting the header) of the "tidy.txt" dataset, pertaining to the (30)(6)=180 subject-activity combinations possible with 30 subjects and 6 activities.  The first 30 rows of measurements contain data corresponding to all 30 subjects engaging in the first activity (i.e. "Walking"), the next 30 rows of measurements correspond to all 30 subjects engaging in the second activity (i.e. "Walking Upstairs"), and so on. In order, the activities are 1. "Walking" 2. "Walking Upstairs" 3. "Walking Downstairs" 4. "Sitting" 5. "Standing" 6. "Laying".  Within each block of 30 rows, the subjects are listed in a consistent order (e.g. the 2nd, 32nd, 62nd, 92nd, 122nd, and 152nd rows of measurements all relate to subject #2).
+
+The 66 columns of the "tidy.txt" dataset correspond to 66 motion-related mean and standard deviation measurements for which average values have been provided. The raw data did not contain explicit descriptions for every variable, nevertheless, my attempt to describe them is as follows:
 
 - tBodyAcc-mean()-X is a mean measurement for body acceleration along the x-axis
 - tBodyAcc-mean()-Y is a mean measurement for body acceleration along the y-axis 
@@ -72,7 +74,7 @@ There are 180 columns of the "tidy.txt" dataset, pertaining to the 30(6)=180 com
 - fBodyBodyGyroJerkMag-mean() is a mean measurement for a frequency domain signal corresponding to overall gyroscopic jerk 
 - fBodyBodyGyroJerkMag-std() records the standard deviation for a frequency domain signal corresponding to overall gyroscopic jerk 
 
-Once again, the average values of the 66 measurements above are what's provided in the "tidy.txt" dataset for every subject-activity combination.
+Once again, the average values of the 66 measurements above are what's provided in the columns of the "tidy.txt" dataset for each subject-activity combination.
 
 ###Raw Data & Experimental Design
 The raw data were provided by Jorge L. Reyes-Ortiz, Davide Anguita, Alessandro Ghio, Luca Oneto in a dataset they made available through the UCI Machine Learning Repository (see http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones for more information). Their explanation of the raw data is quoted below:
@@ -89,6 +91,8 @@ The raw data were provided by Jorge L. Reyes-Ortiz, Davide Anguita, Alessandro G
 >- An identifier of the subject who carried out the experiment.
 >- Features are normalized and bounded within [-1,1].
 >- Each feature vector is a row on the text file."
+
+The experimenters made use of the Euclidean Norm to construct tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag.  They also applied a Fast Fourier Transformation to construct fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, and BodyGyroJerkMag.  
 
 The raw data was divided between several different files all contained in the folder downloaded from the UCI Machine Learning database in early June 2015.
 
