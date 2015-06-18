@@ -50,5 +50,5 @@ data$Activity <- factor(data$Activity, labels = c("walking",
 data$Subject <- factor(data$Subject)
 data$Sub.Act <- interaction(data$Subject, data$Activity)
 tidy <- data.frame(aperm(sapply(split(data[,1:66], data$Sub.Act), colMeans)))
-#(next line should create table of averages in working directory)
+#(next line should create table of averages "tidy.txt" in working directory)
 write.table(tidy, "tidy.txt", row.names = FALSE)
