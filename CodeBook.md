@@ -92,7 +92,7 @@ The raw data were provided by Jorge L. Reyes-Ortiz, Davide Anguita, Alessandro G
 >- Features are normalized and bounded within [-1,1].
 >- Each feature vector is a row on the text file."
 
-The experimenters made use of the Euclidean Norm to construct tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag.  They also applied a Fast Fourier Transformation to construct fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, and BodyGyroJerkMag.  
+The original experimenters made use of the Euclidean Norm to construct tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag.  They also applied a Fast Fourier Transformation to construct fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, and BodyGyroJerkMag.  
 
 The raw data was divided between several different files all contained in the folder downloaded from the UCI Machine Learning database in early June 2015.
 
@@ -105,7 +105,7 @@ The broad outline of the script is to:
 - subset the dataset to only include the variables for mean and standard deviation as well as the subject and activity identifiers
 - explicitly label the activity identifers (the variable names were already explicit)
 - create a new variable that identifies the subject-activity combination present for each observation
-- compute the mean value of each variable at every subject-activity combination (this involved splitting the data by subject-activity combination and then computing the means for each of the 66 variables in the 180 subject-activity "sections" of the data)
+- compute the arithmetic average of each variable at every subject-activity combination (this involved splitting the data by subject-activity combination and then computing the means for each of the 66 variables in the 180 subject-activity "sections" of the data)
 - store the mean values in a dataset to be exported as "tidy.txt"
 
 Note: I recommend exporting the tidy.txt file with rownames, which would simply require replacing the FALSE contained in the final line of the code with TRUE prior to running the code. For the purposes of this task, I was required to export the file without rownames.
